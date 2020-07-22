@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Maven Pro', Arial, sans-serif;
+    background-image: url('https://i.postimg.cc/DwzBT0XJ/UkEIfFj.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 20px;
+    color: snow;
+    margin: 0 auto;
+    padding: 0;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+footer {
+    background-color: #333;
+}
+
+.footer-hr  {
+    background: white;
+    border: 0.5px solid white;
+}
+
+.copyright {
+    font-size: 20px;
+    text-align: center;
+    margin: auto;
+}
+
+.navbar {
+    background-color: #333;
+}
+
+.navbar,
+.navlink {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0;
+    padding: 5px;
+}
+
+.navlogo {
+    color: #fff;
+    font-family: 'Rock Salt', cursive;
+    font-size: 20px;
+}
+
+.navbar-dark .navbar-toggler-icon {
+    background-image: url(https://image.flaticon.com/icons/svg/2099/2099153.svg);
+}
+
+.navbar-dark .navbar-toggler {
+    color: white;
+    border-color: transparent;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-dark .navbar-brand {
+    font-size: 1.5em;
+}
+
+.center {
+    background-color: #111111bd;
+    font-family: 'Rancho', cursive;
+    width: 25%;
+    margin: 1em auto;
+    font-size: 3em;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#logonav {
+    width: 4em;
+    margin-right: -1em;
+}
+
+#navlink {
+    font-family: 'Rancho', cursive;
+    font-size: 30px;
+    padding: 20px;
+    transition: 500ms;
+    border-radius: 50%;
+}
+
+#navlink:hover {
+    background-color: #111;
+    border-radius: 50%;
+    transition: 500ms;
+    box-shadow: 10px 5px 5px black;
+}
+
+.home-ctn {
+    width: 80%;
+    margin: 10em auto;
+}
+
+.card-ctn {
+    margin: 1em;
+    width: 25%;
+    background-color: #111;
+    padding-left: unset;
+    padding-right: unset;
+}
+
+.btn {
+    background-color: white;
+    transition: 500ms;
+}
+
+.btn:hover {
+    background-image: url("https://media.giphy.com/media/URZcG7uLd9h4s/giphy.gif");
+    background-position: center;
+    transition: 500ms;
+    color: white;
+}
+
+.card-article {
+    padding: unset
+}
+
+.card-content {
+    width: 90%;
+    margin: 1em auto 0.5em;
+}
+
+.article-row {
+    justify-content: center;
+    flex-wrap: unset;
+}
+
+.card-img-article {
+    height: 15em;
+}
+
+.article-ctn {
+    width: 80%;
+    margin: 10em auto;
+}
+
+.article-details-row {
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.img-article {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.photo-article-ctn {
+    width: 40%;
+}
+
+.description-article-ctn {
+    width: 40%;
+    background-color: #111111bd;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.article-title {
+    width: 70%;
+}
+
+#btn-article {
+    margin: 3em;
+    font-size: 1em;
+}
+
+#aboutus {
+    margin-top: 2em;
+}
+
+.aboutus-row {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.team-since {
+    text-shadow: 3px 3px black;
+    text-align: center;
+}
+
+.team-photo-ctn {
+    text-align: center;
+    margin: 1em;
+}
+
+.team-photo {
+    border-radius: 5px;
+}
+
+.team-description-ctn {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+
+#btn-team {
+    margin-top: 1.5em;
+    font-size: 1.5em;
+}
+
+.artists-ctn {
+    width: 80%;
+    margin: 10em auto;
+}
+
+.artists-row {
+    justify-content: center;
+}
+
+.card-img-artists {
+    height: 23em;
+}
+
+.artist-name {
+    margin-top: 1em;
+}

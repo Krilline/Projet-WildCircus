@@ -6,7 +6,7 @@
     <div class="home-ctn">
         <h2 class="center">Latest Articles</h2>
         <div class="row article-row">
-            {% for article in articles %}
+            {% for article in articles|sort((a,b) => a.createdat < b.createdat)|slice(0,3) %}
             <div class="card col-4 card-ctn">
                 <div class="card-body card-article">
                     <img class="card-img-top card-img-article" src="{{ article.photo }}" alt="{{ article.title }}">

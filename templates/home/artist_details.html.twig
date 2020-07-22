@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ artist.name }}{% endblock %}
+
+{% block body %}
+    <div class="artists-ctn">
+        <h2 class="center artist-title">{{ artist.name }}</h2>
+        <div class="row artist-details-row">
+            <div class="photo-artist-ctn">
+                <img class="artist-photo" src="{{ artist.photo }}" alt="{{ artist.name }}">
+            </div>
+            <div class="description-artist-ctn">
+                <p>{{ artist.description }}</p>
+                <p>Speciality - <b><em>{{ artist.speciality }}</em></b></p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <a href="{{ path('artists') }}"><button id="btn-artist" class="btn"><b>Back to Artists</b></button></a>
+        </div>
+    </div>
+{% endblock %}

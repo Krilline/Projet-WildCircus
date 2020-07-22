@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Artists{% endblock %}
+
+{% block body %}
+    <div class="tours-ctn">
+        <div class="row tours-row">
+            {% for tour in tours|sort((a,b) => a.id < b.id) %}
+            <div class="card card-ctn">
+                <div class="card-body">
+                    <img class="card-img-top" src="{{ tour.photo }}" alt="{{ tour.title }}">
+                    <h3>{{ tour.title }}</h3>
+                    <div class="row tour-row-date">
+                        <div class="start-date">
+                            <p>{{ tour.startDate }}</p>
+                        </div>
+                        <div class="end-date">
+                            <p>{{ tour.endDate }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -6,8 +6,8 @@
     <div class="artists-ctn">
         <div class="row artists-row">
             {% for artist in artists %}
-            <div class="card col-3 card-ctn">
-                <a href="#">
+            <div class="card col-3 card-ctn" id="card-artist">
+                <a href="{{ path('artist_details', { 'id': artist.id}) }}">
                     <div class="card-body card-artists">
                         <img class="card-img-top card-img-artists" src="{{ artist.photo }}" alt="{{ artist.name }}">
                         <p class="artist-name"><b>{{ artist.name }}</b></p>

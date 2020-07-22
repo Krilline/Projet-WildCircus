@@ -128,6 +128,7 @@ footer {
     background-image: url("https://media.giphy.com/media/URZcG7uLd9h4s/giphy.gif");
     background-position: center;
     transition: 500ms;
+    box-shadow: 5px 5px 5px #111111;
     color: white;
 }
 
@@ -160,6 +161,7 @@ footer {
 }
 
 .img-article {
+    box-shadow: 5px 5px 5px #111111;
     width: 100%;
     border-radius: 5px;
 }
@@ -168,7 +170,7 @@ footer {
     width: 40%;
 }
 
-.description-article-ctn {
+.content-article-ctn {
     width: 40%;
     background-color: #111111bd;
     padding: 10px;
@@ -204,6 +206,7 @@ footer {
 }
 
 .team-photo {
+    box-shadow: 5px 5px 5px #111111;
     border-radius: 5px;
 }
 
@@ -227,10 +230,62 @@ footer {
     justify-content: center;
 }
 
+#card-artist {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    transition: transform 500ms, box-shadow 500ms;
+    transform: scale(1, 1);
+}
+
+#card-artist:hover {
+    box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.5);
+    transform: scale(1.1, 1.1);
+    transition: transform 500ms;
+}
+
 .card-img-artists {
     height: 23em;
 }
 
 .artist-name {
     margin-top: 1em;
+}
+
+.artist-title {
+    width: 70%;
+}
+
+.artist-details-row {
+    justify-content: center;
+    align-items: center;
+}
+
+.artist-photo {
+    width: 60%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #111111;
+}
+
+.photo-artist-ctn {
+    width: 40%;
+}
+
+.description-artist-ctn {
+    width: 40%;
+    background-color: #111111bd;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#btn-artist {
+    margin: 3em;
+    font-size: 1em;
+}
+
+.tours-ctn {
+    width: 80%;
+    margin: 10em auto;
+}
+
+.tours-row {
+    flex-direction: column;
 }

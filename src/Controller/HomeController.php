@@ -3,9 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Article;
+use App\Entity\Artist;
 use App\Repository\ArticleRepository;
 use App\Repository\ArtistRepository;
 use App\Repository\TeamRepository;
+use App\Repository\TourRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -43,12 +45,22 @@ class HomeController extends AbstractController
     }
 
     /**
+     * @Route("/artist/{id}", name="artist_details")
+     */
+    public function artist_details(Artist $artist)
+    {
+        return $this->render('home/artist_details.html.twig', [
+            'artist' => $artist,
+        ]);
+    }
+
+    /**
      * @Route("/tours", name="tours")
      */
-    public function tours()
+    public function tours(TourRepository $tourRepository)
     {
-        return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
+        return $this->render('home/tours.html.twig', [
+            'tours' => $tourRepository->findAll(),
         ]);
     }
 

@@ -40,9 +40,18 @@ class Artist
     private $speciality;
 
     /**
-     * @ORM\OneToMany(targetEntity=Tour::class, mappedBy="artists")
+     * @ORM\ManyToMany(targetEntity=Tour::class, mappedBy="artists")
      */
     private $tours;
+
+    /**
+     * toString
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getName();
+    }
 
     public function __construct()
     {
@@ -114,7 +123,7 @@ class Artist
     {
         if (!$this->tours->contains($tour)) {
             $this->tours[] = $tour;
-            $tour->setArtists($this);
+            $tour->addArtist($this);
         }
 
         return $this;
@@ -124,10 +133,7 @@ class Artist
     {
         if ($this->tours->contains($tour)) {
             $this->tours->removeElement($tour);
-            // set the owning side to null (unless already changed)
-            if ($tour->getArtists() === $this) {
-                $tour->setArtists(null);
-            }
+            $tour->removeArtist($this);
         }
 
         return $this;

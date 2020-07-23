@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use App\Entity\Artist;
+use App\Entity\Tour;
 use App\Repository\ArticleRepository;
 use App\Repository\ArtistRepository;
 use App\Repository\TeamRepository;
@@ -61,6 +62,16 @@ class HomeController extends AbstractController
     {
         return $this->render('home/tours.html.twig', [
             'tours' => $tourRepository->findAll(),
+        ]);
+    }
+
+    /**
+     * @Route("/tour/{id}", name="tour_details")
+     */
+    public function tour_details(Tour $tour)
+    {
+        return $this->render('home/tour_details.html.twig', [
+            'tour' => $tour,
         ]);
     }
 

@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ tour.title }}{% endblock %}
+
+{% block body %}
+    <div class="tours-ctn">
+        <h2 class="center">{{ tour.title }}</h2>
+        <div class="tour-img-ctn">
+            <img class="tour-img" src="{{ tour.photo }}" alt="{{ tour.title }}">
+        </div>
+        <h2 class="center">Countries</h2>
+        <div class="row tour-countries-row">
+            {% for country in tour.countries %}
+            <div class="country-ctn col-10">
+                <h3 class="country-name"><b>{{ country.name }}</b></h3>
+            </div>
+            <div class="row tour-cities-row">
+                {% for city in country.cities %}
+                    <img class="arrow-img" src="https://image.flaticon.com/icons/svg/833/833569.svg" alt="...">
+                    <div class="city-ctn">
+                        <p class="date"><b>{{ city.name }}</b></p>
+                    </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+        <h2 class="center">Present Artists</h2>
+        <div class="row tour-artists-row">
+            {% for artist in tour.artists %}
+            <div class="artist-ctn">
+                <a href="{{ path('artist_details', { 'id': artist.id}) }}"><button class="btn">{{ artist.name }}</button></a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

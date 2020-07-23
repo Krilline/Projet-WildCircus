@@ -4,11 +4,16 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use App\Entity\Artist;
+use App\Entity\Contact;
+use App\Entity\Tour;
+use App\Form\ContactType;
 use App\Repository\ArticleRepository;
 use App\Repository\ArtistRepository;
 use App\Repository\TeamRepository;
 use App\Repository\TourRepository;
+use App\Service\Mailer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
@@ -65,12 +70,43 @@ class HomeController extends AbstractController
     }
 
     /**
+     * @Route("/tour/{id}", name="tour_details")
+     */
+    public function tour_details(Tour $tour)
+    {
+        return $this->render('home/tour_details.html.twig', [
+            'tour' => $tour,
+        ]);
+    }
+
+    /**
+     * @Route("/thanks", name="thanks")
+     */
+    public function thanks()
+    {
+        return $this->render('home/thanks.html.twig');
+    }
+
+    /**
      * @Route("/contact", name="contact")
      */
-    public function contact()
+    public function contact(Request $request, Mailer $mailer)
     {
-        return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
+        $contact = new Contact();
+        $form = $this->createForm(ContactType::class, $contact);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($contact);
+            $entityManager->flush();
+
+            $mailer->confirmationMail($contact);
+
+            return $this->redirectToRoute('thanks');
+        }
+        return $this->render('home/contact.html.twig', [
+            'form' => $form->createView(),
         ]);
     }
 }

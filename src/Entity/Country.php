@@ -29,9 +29,24 @@ class Country
      */
     private $cities;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Tour::class, mappedBy="countries")
+     */
+    private $tours;
+
+    /**
+     * toString
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
     public function __construct()
     {
         $this->cities = new ArrayCollection();
+        $this->tours = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -77,6 +92,34 @@ class Country
             if ($city->getCountry() === $this) {
                 $city->setCountry(null);
             }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Tour[]
+     */
+    public function getTours(): Collection
+    {
+        return $this->tours;
+    }
+
+    public function addTour(Tour $tour): self
+    {
+        if (!$this->tours->contains($tour)) {
+            $this->tours[] = $tour;
+            $tour->addCountry($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTour(Tour $tour): self
+    {
+        if ($this->tours->contains($tour)) {
+            $this->tours->removeElement($tour);
+            $tour->removeCountry($this);
         }
 
         return $this;

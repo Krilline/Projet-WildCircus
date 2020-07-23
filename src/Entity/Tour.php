@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\TourRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -38,14 +40,29 @@ class Tour
     private $end_date;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Artist::class, inversedBy="tours")
+     * @ORM\ManyToMany(targetEntity=Country::class, inversedBy="tours")
+     */
+    private $countries;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Artist::class, inversedBy="tours")
      */
     private $artists;
 
     /**
-     * @ORM\ManyToOne(targetEntity=City::class, inversedBy="tours")
+     * toString
+     * @return string
      */
-    private $cities;
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
+
+    public function __construct()
+    {
+        $this->countries = new ArrayCollection();
+        $this->artists = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -100,26 +117,54 @@ class Tour
         return $this;
     }
 
-    public function getArtists(): ?Artist
+    /**
+     * @return Collection|Country[]
+     */
+    public function getCountries(): Collection
     {
-        return $this->artists;
+        return $this->countries;
     }
 
-    public function setArtists(?Artist $artists): self
+    public function addCountry(Country $country): self
     {
-        $this->artists = $artists;
+        if (!$this->countries->contains($country)) {
+            $this->countries[] = $country;
+        }
 
         return $this;
     }
 
-    public function getCities(): ?City
+    public function removeCountry(Country $country): self
     {
-        return $this->cities;
+        if ($this->countries->contains($country)) {
+            $this->countries->removeElement($country);
+        }
+
+        return $this;
     }
 
-    public function setCities(?City $cities): self
+    /**
+     * @return Collection|Artist[]
+     */
+    public function getArtists(): Collection
     {
-        $this->cities = $cities;
+        return $this->artists;
+    }
+
+    public function addArtist(Artist $artist): self
+    {
+        if (!$this->artists->contains($artist)) {
+            $this->artists[] = $artist;
+        }
+
+        return $this;
+    }
+
+    public function removeArtist(Artist $artist): self
+    {
+        if ($this->artists->contains($artist)) {
+            $this->artists->removeElement($artist);
+        }
 
         return $this;
     }

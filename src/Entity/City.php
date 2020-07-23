@@ -29,16 +29,6 @@ class City
      */
     private $country;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Tour::class, mappedBy="cities")
-     */
-    private $tours;
-
-    public function __construct()
-    {
-        $this->tours = new ArrayCollection();
-    }
-
     public function getId(): ?int
     {
         return $this->id;
@@ -64,37 +54,6 @@ class City
     public function setCountry(?Country $country): self
     {
         $this->country = $country;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Tour[]
-     */
-    public function getTours(): Collection
-    {
-        return $this->tours;
-    }
-
-    public function addTour(Tour $tour): self
-    {
-        if (!$this->tours->contains($tour)) {
-            $this->tours[] = $tour;
-            $tour->setCities($this);
-        }
-
-        return $this;
-    }
-
-    public function removeTour(Tour $tour): self
-    {
-        if ($this->tours->contains($tour)) {
-            $this->tours->removeElement($tour);
-            // set the owning side to null (unless already changed)
-            if ($tour->getCities() === $this) {
-                $tour->setCities(null);
-            }
-        }
 
         return $this;
     }

@@ -452,6 +452,7 @@ footer {
 
 .tour-hr {
     margin-top: 1em;
+    width: 50%;
     border-radius: 5px;
     border: 2px solid #111111;
     background: #111111;
@@ -462,4 +463,81 @@ footer {
     margin-right: 1em;
     margin-left: 1em;
     font-size: 1.5em;
+}
+
+#btn-login {
+    margin-top: 1em;
+}
+
+.link-register {
+    color: #2199e8;
+}
+
+.link-register:hover {
+    text-decoration: underline;
+}
+
+.login {
+    background-color: #111;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.login-form {
+    margin-bottom: 21em;
+}
+
+.register-form {
+    margin-bottom: 14em;
+}
+
+.register {
+    background-color: #111;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.icon-user {
+    width: 50px;
+}
+
+.info-img {
+    width: 25px;
+}
+
+.info-div {
+    margin-top: 1em;
+    text-align: center;
+}
+
+#logout-button {
+    font-family: 'Rancho', cursive;
+    font-size: 30px;
+    padding: 20px;
+    transition: 500ms;
+    border-radius: 50%;
+    color: #9e3737;
+}
+
+#logout-button:hover {
+    background-color: #111;
+    border-radius: 50%;
+    transition: 500ms;
+    box-shadow: 10px 5px 5px black;
+}
+
+#login-button {
+    font-family: 'Rancho', cursive;
+    font-size: 30px;
+    padding: 20px;
+    transition: 500ms;
+    border-radius: 50%;
+    color: #3f3fe5;
+}
+
+#login-button:hover {
+    background-color: #111;
+    border-radius: 50%;
+    transition: 500ms;
+    box-shadow: 10px 5px 5px black;
 }

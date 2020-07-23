@@ -25,6 +25,18 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                     <ul class="navbar-nav">
+                        {% if app.user %}
+                            <li class="nav-item active">
+                                <a class="nav-link" id="navlink" href="#"><img class="icon-user" src="https://image.flaticon.com/icons/svg/848/848006.svg"></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link logout-button" id="logout-button" href="{{ path('app_logout') }}">LOGOUT</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item active">
+                                <a class="nav-link login-button" id="login-button" href="{{ path('app_login') }}">LOGIN</a>
+                            </li>
+                        {% endif %}
                         <li class="nav-item active">
                             <a class="nav-link" id="navlink" href="{{ path('home') }}#aboutus">ABOUT US</a>
                         </li>

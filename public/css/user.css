@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Maven Pro', Arial, sans-serif;
+    background-image: url('https://i.postimg.cc/7PS8KZ6T/rideau.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 20px;
+    color: snow;
+    margin: 0 auto;
+    padding: 0;
+}
+
+form {
+    width: 50%;
+    margin: 5em auto 7em;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+.btn {
+    background-color: white;
+    transition: 500ms;
+}
+
+.btn:hover {
+    background-image: url("https://media.giphy.com/media/URZcG7uLd9h4s/giphy.gif");
+    background-position: center;
+    transition: 500ms;
+    box-shadow: 5px 5px 5px #111111;
+    color: white;
+}
+
+.navbar {
+    background-color: #333;
+}
+
+.navbar,
+.navlink {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0;
+    padding: 5px;
+}
+
+.navlogo {
+    color: #fff;
+    font-family: 'Rock Salt', cursive;
+    font-size: 20px;
+}
+
+.navbar-dark .navbar-toggler-icon {
+    background-image: url(https://image.flaticon.com/icons/svg/2099/2099153.svg);
+}
+
+.navbar-dark .navbar-toggler {
+    color: white;
+    border-color: transparent;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-dark .navbar-brand {
+    font-size: 1.5em;
+}
+
+.center {
+    background-color: #111111bd;
+    font-family: 'Rancho', cursive;
+    width: 25%;
+    margin: 1em auto;
+    font-size: 3em;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.icon-user {
+    width: 50px;
+}
+
+#logonav {
+    width: 4em;
+    margin-right: -1em;
+}
+
+#navlink {
+    font-family: 'Rancho', cursive;
+    font-size: 30px;
+    padding: 20px;
+    transition: 500ms;
+    border-radius: 50%;
+}
+
+#navlink:hover {
+    background-color: #111;
+    border-radius: 50%;
+    transition: 500ms;
+    box-shadow: 10px 5px 5px black;
+}
+
+.profile-ctn  {
+    width: 80%;
+    margin: 10em auto;
+}
+
+#login-button {
+    font-family: 'Rancho', cursive;
+    font-size: 30px;
+    padding: 20px;
+    transition: 500ms;
+    border-radius: 50%;
+    color: #3f3fe5;
+}
+
+#login-button:hover {
+    background-color: #111;
+    border-radius: 50%;
+    transition: 500ms;
+    box-shadow: 10px 5px 5px black;
+}
+
+#logout-button {
+    font-family: 'Rancho', cursive;
+    font-size: 30px;
+    padding: 20px;
+    transition: 500ms;
+    border-radius: 50%;
+    color: #9e3737;
+}
+
+#logout-button:hover {
+    background-color: #111;
+    border-radius: 50%;
+    transition: 500ms;
+    box-shadow: 10px 5px 5px black;
+}
+
+ #btn-login {
+     margin-top: 1em;
+ }
+
+.link-register {
+    color: #2199e8;
+}
+
+.link-register:hover {
+    text-decoration: underline;
+}
+
+.login {
+    background-color: #111;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.register {
+    background-color: #111;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.id-ctn {
+    background-color: rgba(17, 17, 17, 0.78);
+    padding: 50px;
+    width: 60%;
+    border-radius: 5px;
+    margin: auto;
+    text-align: center;
+}
+
+.orders-ctn {
+    background-color: rgba(17, 17, 17, 0.78);
+    padding: 50px;
+    width: 60%;
+    border-radius: 5px;
+    text-align: center;
+    margin: auto auto 5em;
+}
+
+.info-img {
+    width: 25px;
+}
+
+.info-div {
+    margin: 1em auto;
+    text-align: center;
+    width: 50%;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.24);
+}
+
+.cart-ctn {
+    width: 80%;
+    margin: 10em auto;
+}
+
+#btn-pay {
+    font-size: 1em;
+}

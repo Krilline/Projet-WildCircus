@@ -50,6 +50,16 @@ class Tour
     private $artists;
 
     /**
+     * @ORM\OneToMany(targetEntity=Order::class, mappedBy="tour")
+     */
+    private $orders;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $price;
+
+    /**
      * toString
      * @return string
      */
@@ -62,6 +72,7 @@ class Tour
     {
         $this->countries = new ArrayCollection();
         $this->artists = new ArrayCollection();
+        $this->orders = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -165,6 +176,49 @@ class Tour
         if ($this->artists->contains($artist)) {
             $this->artists->removeElement($artist);
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Order[]
+     */
+    public function getOrders(): Collection
+    {
+        return $this->orders;
+    }
+
+    public function addOrder(Order $order): self
+    {
+        if (!$this->orders->contains($order)) {
+            $this->orders[] = $order;
+            $order->setTour($this);
+        }
+
+        return $this;
+    }
+
+    public function removeOrder(Order $order): self
+    {
+        if ($this->orders->contains($order)) {
+            $this->orders->removeElement($order);
+            // set the owning side to null (unless already changed)
+            if ($order->getTour() === $this) {
+                $order->setTour(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getPrice(): ?int
+    {
+        return $this->price;
+    }
+
+    public function setPrice(?int $price): self
+    {
+        $this->price = $price;
 
         return $this;
     }

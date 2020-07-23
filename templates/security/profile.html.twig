@@ -1,0 +1,42 @@
+{% extends 'base_profile.html.twig' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block body %}
+    <div class="profile-ctn">
+        <h2 class="center">Your Credentials</h2>
+        <div class="id-ctn">
+            <p><b>Username:</b> <em>{{ app.user.username }}</em></p>
+            <p><b>Email:</b> <em>{{ app.user.email }}</em></p>
+        </div>
+        <h2 class="center">Your Orders</h2>
+        {% if app.user.orders is not empty %}
+        <div class="orders-ctn">
+            <table class="table table-striped table-dark">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Order N°</th>
+                <th scope="col">Tour</th>
+                <th scope="col">Seat(s)</th>
+                <th scope="col">Total</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for order in app.user.orders %}
+            <tr>
+                <th scope="row">{{ order.number }}</th>
+                <td>{{ order.tour.title }}</td>
+                <td>{{ order.seat }}</td>
+                <td>{{ order.total }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+            </table>
+        </div>
+            {% else %}
+                <div class="info-div">
+                    <h3><img class="info-img" src="https://image.flaticon.com/icons/svg/785/785822.svg" alt="info"> You don't have any orders yet ! <a class="link-register" href="{{ path('tours') }}">Browse our Tours</a></h3>
+                </div>
+        {% endif %}
+    </div>
+{% endblock %}

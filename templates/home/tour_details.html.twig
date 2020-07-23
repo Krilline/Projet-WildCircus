@@ -50,7 +50,14 @@
         <hr class="tour-hr">
         <div class="row justify-content-center">
             <a href="{{ path('tours') }}"><button id="btn-tour" class="btn"><b>Back to Tours</b></button></a>
-            <a href="#"><button id="btn-tour" class="btn"><b>Book !</b></button></a>
+            {% if app.user %}
+            <a href="{{ path('cart_add', { 'id': tour.id}) }}"><button id="btn-tour" class="btn"><b>Book !</b></button></a>
+            {% endif %}
         </div>
+        {% if not app.user %}
+            <div class="info-div">
+                <p><img class="info-img" src="https://image.flaticon.com/icons/svg/785/785822.svg" alt="info"> You must be logged to book a Tour ! <a class="link-register" href="{{ path('app_login') }}">Login</a></p>
+            </div>
+        {% endif %}
     </div>
 {% endblock %}

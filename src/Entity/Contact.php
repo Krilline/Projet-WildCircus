@@ -25,20 +25,20 @@ class Contact
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="Ce champs ne peut pas être vide")
-     * @Assert\Email(message="Veuillez entrer un email valide")
+     * @Assert\NotBlank(message="This field cannot be empty")
+     * @Assert\Email(message="Please enter a valid email")
      */
     private $email;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="Ce champs ne peut pas être vide")
+     * @Assert\NotBlank(message="This field cannot be empty")
      */
     private $name;
 
     /**
      * @ORM\Column(type="text")
-     * @Assert\NotBlank(message="Ce champs ne peut pas être vide")
+     * @Assert\NotBlank(message="This field cannot be empty")
      */
     private $message;
 

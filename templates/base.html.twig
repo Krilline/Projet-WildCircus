@@ -27,6 +27,9 @@
                     <ul class="navbar-nav">
                         {% if app.user %}
                             <li class="nav-item active">
+                                <a class="nav-link" id="navlink" href="{{ path('cart') }}"><img class="icon-user" src="https://image.flaticon.com/icons/svg/3209/3209312.svg"></a>
+                            </li>
+                            <li class="nav-item active">
                                 <a class="nav-link" id="navlink" href="{{ path('profile') }}"><img class="icon-user" src="https://image.flaticon.com/icons/svg/848/848006.svg"></a>
                             </li>
                             <li class="nav-item active">

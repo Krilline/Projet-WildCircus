@@ -43,6 +43,12 @@ class Order
      */
     private $tour;
 
+    public function __construct()
+    {
+        $number = mt_rand(100000,999999);
+        $this->number = $number;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

@@ -55,6 +55,11 @@ class Tour
     private $orders;
 
     /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $price;
+
+    /**
      * toString
      * @return string
      */
@@ -202,6 +207,18 @@ class Tour
                 $order->setTour(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPrice(): ?int
+    {
+        return $this->price;
+    }
+
+    public function setPrice(?int $price): self
+    {
+        $this->price = $price;
 
         return $this;
     }

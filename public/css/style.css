@@ -465,36 +465,12 @@ footer {
     font-size: 1.5em;
 }
 
-#btn-login {
-    margin-top: 1em;
-}
-
 .link-register {
     color: #2199e8;
 }
 
 .link-register:hover {
     text-decoration: underline;
-}
-
-.login {
-    background-color: #111;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.login-form {
-    margin-bottom: 21em;
-}
-
-.register-form {
-    margin-bottom: 14em;
-}
-
-.register {
-    background-color: #111;
-    padding: 10px;
-    border-radius: 5px;
 }
 
 .icon-user {

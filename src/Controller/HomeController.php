@@ -6,6 +6,7 @@ use App\Entity\Article;
 use App\Entity\Artist;
 use App\Entity\Contact;
 use App\Entity\Tour;
+use App\Form\BookType;
 use App\Form\ContactType;
 use App\Repository\ArticleRepository;
 use App\Repository\ArtistRepository;
@@ -86,6 +87,34 @@ class HomeController extends AbstractController
     {
         return $this->render('home/thanks.html.twig');
     }
+
+    /**
+     * @Route("/profile", name="profile")
+     */
+    public function profile()
+    {
+        return $this->render('security/profile.html.twig');
+    }
+
+    /**
+     * @Route("/book/tour/{id}", name="book")
+     */
+    public function book(Tour $tour, Request $request)
+    {
+        $form = $this->createForm(BookType::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            return $this->redirectToRoute('tours');
+        }
+
+        return $this->render('security/book.html.twig', [
+            'tour' => $tour,
+            'form' => $form->createView(),
+        ]);
+    }
+
 
     /**
      * @Route("/contact", name="contact")

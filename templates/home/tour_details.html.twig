@@ -51,7 +51,7 @@
         <div class="row justify-content-center">
             <a href="{{ path('tours') }}"><button id="btn-tour" class="btn"><b>Back to Tours</b></button></a>
             {% if app.user %}
-            <a href="#"><button id="btn-tour" class="btn"><b>Book !</b></button></a>
+            <a href="{{ path('book', { 'id': tour.id}) }}"><button id="btn-tour" class="btn"><b>Book !</b></button></a>
             {% endif %}
         </div>
         {% if not app.user %}

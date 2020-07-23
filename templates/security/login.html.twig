@@ -1,17 +1,17 @@
-{% extends 'base.html.twig' %}
+{% extends 'base_profile.html.twig' %}
 
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
-<form class="login-form" method="post">
+<form method="post">
     <div class="login">
         {% if error %}
             <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
         {% endif %}
 
         {% if app.user %}
-            <div class="mb-3">
-                You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+            <div class="mb-3 text-center">
+                You are logged in as <b>{{ app.user.username }}</b>, <a class="link-register" href="{{ path('app_logout') }}">Logout</a>
             </div>
         {% else %}
             <h1 class="h3 mb-3 font-weight-normal">Login</h1>

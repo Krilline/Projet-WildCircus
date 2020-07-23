@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+    <div class="form-ctn">
+        {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+        <div>
+            {{ form_row(form.subject, {'label': 'Subject'}) }}
+        </div>
+        <div>
+            {{ form_row(form.name, {'label': 'Name'}) }}
+        </div>
+        <div>
+            {{ form_row(form.email, {'label': 'Email'}) }}
+        </div>
+        <div>
+            {{ form_row(form.message, {'label': 'Message'}) }}
+        </div>
+        <div class="button-align-center">
+            <button class="btn" id="btn-contact">{{ button_label|default('Send') }}</button>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

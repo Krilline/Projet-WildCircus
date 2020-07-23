@@ -10,12 +10,11 @@
                 <a href="{{ path('tour_details', { 'id': tour.id}) }}">
                 <div class="card-body">
                     <img class="card-img-top" src="{{ tour.photo }}" alt="{{ tour.title }}">
-                    <h3 class="tour-title"><b>{{ tour.title }}</b></h3>
                     <div class="row tour-row-date">
                         <div class="start-date">
                             <p class="date"><b><em>{{ tour.startDate|date('m/d/Y') }}</em></b></p>
                         </div>
-                        <div>
+                        <div class="tour-arrow">
                             <img class="arrow-img" src="https://image.flaticon.com/icons/svg/833/833569.svg" alt="...">
                             <img class="arrow-img" src="https://image.flaticon.com/icons/svg/833/833569.svg" alt="...">
                             <img class="arrow-img" src="https://image.flaticon.com/icons/svg/833/833569.svg" alt="...">

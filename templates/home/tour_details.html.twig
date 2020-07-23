@@ -24,6 +24,21 @@
             </div>
             {% endfor %}
         </div>
+        <div class="row tour-dates-row">
+            <div class="tour-start-date start-date">
+                <p class="date"><b>{{ tour.startDate|date('m/d/Y') }}</b></p>
+            </div>
+            <h3 class="country-name"><b>Start On</b></h3>
+            <div class="row date-arrow">
+                <img class="tour-image-arrow" src="https://image.flaticon.com/icons/svg/892/892625.svg" alt="...">
+                <img class="tour-image-arrow" src="https://image.flaticon.com/icons/svg/892/892625.svg" alt="...">
+                <img class="tour-image-arrow" src="https://image.flaticon.com/icons/svg/892/892625.svg" alt="...">
+            </div>
+            <h3 class="country-name"><b>Finish On</b></h3>
+            <div class="tour-end-date end-date">
+                <p class="date"><b>{{ tour.endDate|date('m/d/Y') }}</b></p>
+            </div>
+        </div>
         <h2 class="center">Present Artists</h2>
         <div class="row tour-artists-row">
             {% for artist in tour.artists %}
@@ -31,6 +46,11 @@
                 <a href="{{ path('artist_details', { 'id': artist.id}) }}"><button class="btn">{{ artist.name }}</button></a>
             </div>
             {% endfor %}
+        </div>
+        <hr class="tour-hr">
+        <div class="row justify-content-center">
+            <a href="{{ path('tours') }}"><button id="btn-tour" class="btn"><b>Back to Tours</b></button></a>
+            <a href="#"><button id="btn-tour" class="btn"><b>Book !</b></button></a>
         </div>
     </div>
 {% endblock %}

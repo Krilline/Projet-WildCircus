@@ -17,6 +17,39 @@ body {
     padding: 0;
 }
 
+form {
+    width: 50%;
+    margin: 5em auto 7em;
+}
+
+#btn-thanks {
+    font-size: 1.5em;
+    margin: 2em;
+}
+
+.button-thanks-row {
+    justify-content: center;
+    width: 60%;
+    margin: 6em auto;
+}
+
+.thanks-ctn {
+    background-color: #111111bd;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 10em auto;
+}
+
+#btn-contact {
+    font-size: 1.5em;
+}
+
+textarea.form-control {
+    height: 10em;
+}
+
 a:hover {
     text-decoration: none;
     color: white;
@@ -362,6 +395,7 @@ footer {
 
 .country-name {
     text-shadow: 3px 3px black;
+    text-align: center;
 }
 
 .city-ctn {
@@ -379,10 +413,53 @@ footer {
 
 .tour-artists-row {
     justify-content: center;
-    width: 70%;
+    width: 50%;
     margin: auto;
 }
 
 .artist-ctn {
     margin: 0.5em;
+}
+
+.tour-dates-row {
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+.tour-start-date {
+    text-align: center;
+    background-color: #111111bd;
+    width: 15em;
+    margin: 4em auto 1em;
+}
+
+.date-arrow {
+    margin: auto;
+    flex-direction: column;
+}
+
+.tour-end-date {
+    text-align: center;
+    margin: 1em auto;
+    width: 15em;
+    background-color: #111111bd;
+}
+
+.tour-image-arrow {
+    width: 40px;
+}
+
+.tour-hr {
+    margin-top: 1em;
+    border-radius: 5px;
+    border: 2px solid #111111;
+    background: #111111;
+}
+
+#btn-tour {
+    margin-top: 3em;
+    margin-right: 1em;
+    margin-left: 1em;
+    font-size: 1.5em;
 }

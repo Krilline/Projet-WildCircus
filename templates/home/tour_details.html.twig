@@ -48,6 +48,7 @@
             {% endfor %}
         </div>
         <hr class="tour-hr">
+        <h2 class="center">Price Per Seats: {{ tour.price }}$</h2>
         <div class="row justify-content-center">
             <a href="{{ path('tours') }}"><button id="btn-tour" class="btn"><b>Back to Tours</b></button></a>
             {% if app.user %}

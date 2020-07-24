@@ -1,0 +1,225 @@
+easy_admin:
+  site_name: "WILD CIRCUS"
+  formats:
+    datetime: 'd/M/yy H:m'
+  design:
+      menu:
+        - {entity: 'Article', icon: 'user-astronaut'}
+        - {entity: 'Team', icon: 'code-branch'}
+        - {entity: 'Artist', icon: 'address-book'}
+        - {entity: 'User', icon: 'thumbs-up'}
+        - {entity: 'Country', icon: 'cogs'}
+        - {entity: 'City', icon: 'cogs'}
+        - {entity: 'Contact', icon: 'cogs'}
+        - {entity: 'Order', icon: 'cogs'}
+        - {entity: 'Tour', icon: 'cogs'}
+  entities:
+    Article:
+      class: App\Entity\Article
+      list:
+        actions:
+          - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
+          - { name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
+          - { name: 'new', icon: 'plus', label: 'Ajouter', css_class: 'btn btn-success' }
+        fields:
+          - { property: 'photo', type: 'image'}
+          - 'title'
+          - 'author'
+          - 'date'
+      edit:
+        fields:
+          - 'photo'
+          - 'title'
+          - 'author'
+          - 'content'
+      form:
+        fields:
+          - 'photo'
+          - 'title'
+          - 'author'
+          - 'content'
+
+    Team:
+      class: App\Entity\Team
+      list:
+        actions:
+          - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
+          - { name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
+          - { name: 'new', icon: 'plus', label: 'Ajouter', css_class: 'btn btn-success' }
+        fields:
+          - { property: 'photo', type: 'image'}
+          - 'since_date'
+      edit:
+        fields:
+          - 'photo'
+          - 'description'
+          - 'since_date'
+      form:
+        fields:
+          - 'photo'
+          - 'description'
+          - 'since_date'
+
+    Contact:
+      class: App\Entity\Contact
+      disabled_actions: ['edit','new']
+      list:
+        actions:
+          - { name: 'show', icon: 'eye', label: false, css_class: 'btn btn-primary' }
+          - { name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
+        fields:
+          - 'name'
+          - 'email'
+          - 'subject'
+          - 'created_at'
+      show:
+        fields:
+          - 'name'
+          - 'email'
+          - 'subject'
+          - 'message'
+          - 'created_at'
+
+    Artist:
+      class: App\Entity\Artist
+      list:
+        actions:
+          - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
+          - { name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
+          - { name: 'new', icon: 'plus', label: 'Ajouter', css_class: 'btn btn-success' }
+        fields:
+          - { property: 'photo', type: 'image' }
+          - 'name'
+          - 'description'
+          - 'speciality'
+      edit:
+        fields:
+          - 'photo'
+          - 'name'
+          - 'description'
+          - 'speciality'
+      form:
+        fields:
+          - 'photo'
+          - 'name'
+          - 'description'
+          - 'speciality'
+
+    User:
+      class: App\Entity\User
+      list:
+        actions:
+          - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
+          - { name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
+          - { name: 'new', icon: 'plus', label: 'Ajouter', css_class: 'btn btn-success' }
+        fields:
+          - 'username'
+          - 'email'
+          - { property: 'orders', label: 'Order', type_options: { by_reference: true }}
+      edit:
+        fields:
+          - 'username'
+          - 'email'
+          - { property: 'orders', label: 'Order', type_options: { by_reference: true }}
+      form:
+        fields:
+          - 'username'
+          - 'email'
+          - { property: 'orders', label: 'Order', type_options: { by_reference: true }}
+
+    Country:
+      class: App\Entity\Country
+      list:
+        actions:
+          - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
+          - { name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
+          - { name: 'new', icon: 'plus', label: 'Ajouter', css_class: 'btn btn-success' }
+        fields:
+          - 'name'
+          - { property: 'cities', label: 'Cities', type_options: { by_reference: true }}
+      edit:
+        fields:
+          - 'name'
+          - { property: 'cities', label: 'Cities', type_options: { by_reference: true }}
+      form:
+        fields:
+          - 'name'
+          - { property: 'cities', label: 'Cities', type_options: { by_reference: true }}
+
+    City:
+      class: App\Entity\City
+      list:
+        actions:
+          - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
+          - { name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
+          - { name: 'new', icon: 'plus', label: 'Ajouter', css_class: 'btn btn-success' }
+        fields:
+          - 'name'
+          - { property: 'country', label: 'Country', type_options: { by_reference: true }}
+      edit:
+        fields:
+          - 'name'
+          - { property: 'country', label: 'Country', type_options: { by_reference: true }}
+      form:
+        fields:
+          - 'name'
+          - { property: 'country', label: 'Country', type_options: { by_reference: true }}
+
+    Order:
+      class: App\Entity\Order
+      list:
+        actions:
+          - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
+          - { name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
+          - { name: 'new', icon: 'plus', label: 'Ajouter', css_class: 'btn btn-success' }
+        fields:
+          - 'number'
+          - { property: 'tour', label: 'Tour', type_options: { by_reference: true }}
+          - { property: 'user', label: 'User', type_options: { by_reference: true }}
+          - 'seat'
+          - 'total'
+      edit:
+        fields:
+          - 'number'
+          - { property: 'tour', label: 'Tour', type_options: { by_reference: true }}
+          - { property: 'user', label: 'User', type_options: { by_reference: true }}
+          - 'seat'
+          - 'total'
+      form:
+        fields:
+          - 'number'
+          - { property: 'tour', label: 'Tour', type_options: { by_reference: true }}
+          - { property: 'user', label: 'User', type_options: { by_reference: true }}
+          - 'seat'
+          - 'total'
+
+    Tour:
+      class: App\Entity\Tour
+      list:
+        actions:
+          - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
+          - { name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
+          - { name: 'new', icon: 'plus', label: 'Ajouter', css_class: 'btn btn-success' }
+        fields:
+          - { property: 'photo', type: 'image'}
+          - 'title'
+          - { property: 'countries', label: 'Countries', type_options: { by_reference: true }}
+          - { property: 'artists', label: 'Artists', type_options: { by_reference: true }}
+          - 'start_date'
+          - 'end_date'
+      edit:
+        fields:
+          - 'photo'
+          - 'title'
+          - { property: 'countries', label: 'Countries', type_options: { by_reference: true }}
+          - { property: 'artists', label: 'Artists', type_options: { by_reference: true }}
+          - 'start_date'
+          - 'end_date'
+      form:
+        fields:
+          - 'photo'
+          - 'title'
+          - { property: 'countries', label: 'Countries', type_options: { by_reference: true }}
+          - { property: 'artists', label: 'Artists', type_options: { by_reference: true }}
+          - 'start_date'
+          - 'end_date'

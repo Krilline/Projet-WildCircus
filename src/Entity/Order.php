@@ -43,6 +43,15 @@ class Order
      */
     private $tour;
 
+    /**
+     * toString
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getTour()->getTitle();
+    }
+
     public function __construct()
     {
         $number = mt_rand(100000,999999);

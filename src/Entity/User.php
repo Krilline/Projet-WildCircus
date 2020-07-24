@@ -53,6 +53,15 @@ class User implements UserInterface
      */
     private $email;
 
+    /**
+     * toString
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getUsername();
+    }
+
     public function __construct()
     {
         $this->roles = ["ROLE_USER"];

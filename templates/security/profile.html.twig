@@ -22,7 +22,7 @@
             </tr>
             </thead>
             <tbody>
-            {% for order in app.user.orders %}
+            {% for order in app.user.orders|sort((a,b) => a.id < b.id) %}
             <tr>
                 <th scope="row">{{ order.number }}</th>
                 <td>{{ order.tour.title }}</td>

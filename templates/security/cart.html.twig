@@ -1,0 +1,47 @@
+{% extends 'base_profile.html.twig' %}
+
+{% block title %}Book{% endblock %}
+
+{% block body %}
+    {% if items | length > 0 %}
+        <div class="cart-ctn">
+        <h2 class="center">Your Cart</h2>
+        <table class="table cart table-light">
+            <thead class="thead-dark">
+            <tr>
+                <th>Tour Name</th>
+                <th>Photo</th>
+                <th>Price</th>
+                <th>Number of seats</th>
+                <th>Total</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in items %}
+                <tr>
+                    <td>{{ item.tour.title }}</td>
+                    <td><img src="{{ item.tour.photo }}" alt="lorem ipsum" width="64px" height="64px"></td>
+                    <td>{{ item.tour.price }} $</td>
+                    <td>{{ item.seat }}</td>
+                    <td>{{ item.tour.price * item.seat }} $</td>
+                    <td><a href="{{ path('cart_remove', { 'id': item.tour.id }) }}"><img src="https://image.flaticon.com/icons/svg/3141/3141684.svg" class="icon-user"></a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="4" class="text-right"><b>Total :</b></td>
+                <td><em>{{ total }} $</em></td>
+                <td></td>
+            </tr>
+            </tfoot>
+        </table>
+        <div class="row justify-content-center">
+            <a href="{{ path('cart_pay') }}"><button id="btn-pay" class="btn"><b>Order</b></button></a>
+        </div>
+    {% else %}
+        <h2 class="center">Cart is Empty</h2>
+    {% endif %}
+    </div>
+{% endblock %}

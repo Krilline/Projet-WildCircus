@@ -1,0 +1,519 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Maven Pro', Arial, sans-serif;
+    background-image: url('https://i.postimg.cc/DwzBT0XJ/UkEIfFj.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 20px;
+    color: snow;
+    margin: 0 auto;
+    padding: 0;
+}
+
+form {
+    width: 50%;
+    margin: 5em auto 7em;
+}
+
+#btn-thanks {
+    font-size: 1.5em;
+    margin: 2em;
+}
+
+.button-thanks-row {
+    justify-content: center;
+    width: 60%;
+    margin: 6em auto;
+}
+
+.thanks-ctn {
+    background-color: #111111bd;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 10em auto;
+}
+
+#btn-contact {
+    font-size: 1.5em;
+}
+
+textarea.form-control {
+    height: 10em;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+footer {
+    background-color: #333;
+}
+
+.footer-hr  {
+    background: white;
+    border: 0.5px solid white;
+}
+
+.copyright {
+    font-size: 20px;
+    text-align: center;
+    margin: auto;
+}
+
+.navbar {
+    background-color: #333;
+}
+
+.navbar,
+.navlink {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0;
+    padding: 5px;
+}
+
+.navlogo {
+    color: #fff;
+    font-family: 'Rock Salt', cursive;
+    font-size: 20px;
+}
+
+.navbar-dark .navbar-toggler-icon {
+    background-image: url(https://image.flaticon.com/icons/svg/2099/2099153.svg);
+}
+
+.navbar-dark .navbar-toggler {
+    color: white;
+    border-color: transparent;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-dark .navbar-brand {
+    font-size: 1.5em;
+}
+
+.center {
+    background-color: #111111bd;
+    font-family: 'Rancho', cursive;
+    width: 25%;
+    margin: 1em auto;
+    font-size: 3em;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#logonav {
+    width: 4em;
+    margin-right: -1em;
+}
+
+#navlink {
+    font-family: 'Rancho', cursive;
+    font-size: 30px;
+    padding: 20px;
+    transition: 500ms;
+    border-radius: 50%;
+}
+
+#navlink:hover {
+    background-color: #111;
+    border-radius: 50%;
+    transition: 500ms;
+    box-shadow: 10px 5px 5px black;
+}
+
+.home-ctn {
+    width: 80%;
+    margin: 10em auto;
+}
+
+.card-ctn {
+    margin: 1em;
+    width: 25%;
+    background-color: #111;
+    padding-left: unset;
+    padding-right: unset;
+}
+
+.btn {
+    background-color: white;
+    transition: 500ms;
+}
+
+.btn:hover {
+    background-image: url("https://media.giphy.com/media/URZcG7uLd9h4s/giphy.gif");
+    background-position: center;
+    transition: 500ms;
+    box-shadow: 5px 5px 5px #111111;
+    color: white;
+}
+
+.card-article {
+    padding: unset
+}
+
+.card-content {
+    width: 90%;
+    margin: 1em auto 0.5em;
+}
+
+.article-row {
+    justify-content: center;
+    flex-wrap: unset;
+}
+
+.card-img-article {
+    height: 15em;
+}
+
+.article-ctn {
+    width: 80%;
+    margin: 10em auto;
+}
+
+
+#card-article {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.article-details-row {
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.img-article {
+    box-shadow: 5px 5px 5px #111111;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.photo-article-ctn {
+    width: 40%;
+}
+
+.content-article-ctn {
+    width: 40%;
+    background-color: #111111bd;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.article-title {
+    width: 70%;
+}
+
+#btn-article {
+    margin: 3em;
+    font-size: 1em;
+}
+
+#aboutus {
+    margin-top: 2em;
+}
+
+.aboutus-row {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.team-since {
+    text-shadow: 3px 3px black;
+    text-align: center;
+}
+
+.team-photo-ctn {
+    text-align: center;
+    margin: 1em;
+}
+
+.team-photo {
+    box-shadow: 5px 5px 5px #111111;
+    border-radius: 5px;
+}
+
+.team-description-ctn {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+
+#btn-team {
+    margin-top: 1.5em;
+    font-size: 1.5em;
+}
+
+.artists-ctn {
+    width: 80%;
+    margin: 10em auto;
+}
+
+.artists-row {
+    justify-content: center;
+}
+
+#card-artist {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    transition: transform 500ms, box-shadow 500ms;
+    transform: scale(1, 1);
+}
+
+#card-artist:hover {
+    box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.5);
+    transform: scale(1.1, 1.1);
+    transition: transform 500ms;
+}
+
+.card-img-artists {
+    height: 23em;
+}
+
+.artist-name {
+    margin-top: 1em;
+}
+
+.artist-title {
+    width: 70%;
+}
+
+.artist-details-row {
+    justify-content: center;
+    align-items: center;
+}
+
+.artist-photo {
+    width: 60%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #111111;
+}
+
+.photo-artist-ctn {
+    width: 40%;
+}
+
+.description-artist-ctn {
+    width: 40%;
+    background-color: #111111bd;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#btn-artist {
+    margin: 3em;
+    font-size: 1em;
+}
+
+.tours-ctn {
+    width: 80%;
+    margin: 10em auto;
+}
+
+.tour-row-date {
+    margin-top: 1em;
+    justify-content: center;
+    align-items: center;
+}
+
+.tours-row {
+    justify-content: center;
+}
+
+.tour-title {
+    margin-top: 0.5em;
+    text-align: center;
+    font-size: 2em;
+}
+
+.arrow-img {
+    width: 30px;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.start-date {
+    color: #89abe3;
+    border: 1px solid #89abe3;
+    border-radius: 5px;
+}
+
+.end-date {
+    color: #a73939;
+    border: 1px solid #a73939;
+    border-radius: 5px;
+}
+
+.date {
+    margin: 0.5em;
+}
+
+#card-tours {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    transition: transform 500ms, box-shadow 500ms;
+    transform: scale(1, 1);
+    margin-bottom: 1.5em;
+}
+
+#card-tours:hover {
+    box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.5);
+    transform: scale(1.1, 1.1);
+    transition: transform 500ms;
+}
+
+.tour-img {
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #111111;
+}
+
+.tour-img-ctn {
+    text-align: center;
+}
+
+.tour-countries-row {
+    justify-content: center;
+}
+
+.country-ctn {
+    text-align: center;
+    margin: 0.5em;
+}
+
+.country-name {
+    text-shadow: 3px 3px black;
+    text-align: center;
+}
+
+.city-ctn {
+    color: #89abe3;
+    border: 1px solid #89abe3;
+    border-radius: 5px;
+}
+
+.tour-cities-row {
+    padding: 5px;
+    justify-content: center;
+    background-color: #111111bd;
+    border-radius: 10%;
+}
+
+.tour-artists-row {
+    justify-content: center;
+    width: 50%;
+    margin: auto;
+}
+
+.artist-ctn {
+    margin: 0.5em;
+}
+
+.tour-dates-row {
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+.tour-start-date {
+    text-align: center;
+    background-color: #111111bd;
+    width: 15em;
+    margin: 4em auto 1em;
+}
+
+.date-arrow {
+    margin: auto;
+    flex-direction: column;
+}
+
+.tour-end-date {
+    text-align: center;
+    margin: 1em auto;
+    width: 15em;
+    background-color: #111111bd;
+}
+
+.tour-image-arrow {
+    width: 40px;
+}
+
+.tour-hr {
+    margin-top: 1em;
+    width: 50%;
+    border-radius: 5px;
+    border: 2px solid #111111;
+    background: #111111;
+}
+
+#btn-tour {
+    margin-top: 3em;
+    margin-right: 1em;
+    margin-left: 1em;
+    font-size: 1.5em;
+}
+
+.link-register {
+    color: #2199e8;
+}
+
+.link-register:hover {
+    text-decoration: underline;
+}
+
+.icon-user {
+    width: 50px;
+}
+
+.info-img {
+    width: 25px;
+}
+
+.info-div {
+    margin-top: 1em;
+    text-align: center;
+}
+
+#logout-button {
+    font-family: 'Rancho', cursive;
+    font-size: 30px;
+    padding: 20px;
+    transition: 500ms;
+    border-radius: 50%;
+    color: #9e3737;
+}
+
+#logout-button:hover {
+    background-color: #111;
+    border-radius: 50%;
+    transition: 500ms;
+    box-shadow: 10px 5px 5px black;
+}
+
+#login-button {
+    font-family: 'Rancho', cursive;
+    font-size: 30px;
+    padding: 20px;
+    transition: 500ms;
+    border-radius: 50%;
+    color: #3f3fe5;
+}
+
+#login-button:hover {
+    background-color: #111;
+    border-radius: 50%;
+    transition: 500ms;
+    box-shadow: 10px 5px 5px black;
+}

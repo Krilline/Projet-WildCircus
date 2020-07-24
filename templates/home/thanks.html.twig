@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Merci !{% endblock %}
+
+{% block body %}
+    <div class="thanks-ctn">
+        <p class="thanks-message">
+            Thanks for your message, we sent you a confirmation email at your address, we will come back to you as soon as possible.
+        </p>
+    </div>
+    <div class="row button-thanks-row">
+        <a href="{{ path('home') }}"><button class="btn" id="btn-thanks">Back Home</button></a>
+    </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    <div class="home-ctn">
+        <h2 class="center">Latest Articles</h2>
+        <div class="row article-row">
+            {% for article in articles|sort((a,b) => a.createdat < b.createdat)|slice(0,3) %}
+            <div class="card col-4 card-ctn" id="card-article">
+                <div class="card-body card-article">
+                    <img class="card-img-top card-img-article" src="{{ article.photo }}" alt="{{ article.title }}">
+                    <div class="card-content">
+                        <p><b>{{ article.title }}</b></p>
+                        <p><em>- {{ article.author }}</em></p>
+                        <a href="{{ path('article_details', { 'id': article.id}) }}"><button class="btn"><b>Read More</b></button></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <h2 class="center" id="aboutus">About Us</h2>
+        <div class="row aboutus-row">
+            <h3 class="team-since"><b>Since {{ team.sinceDate|date('m/d/Y') }}</b></h3>
+            <div class="team-photo-ctn">
+                <img class="team-photo" src="{{ team.photo }}" alt="Team photo">
+            </div>
+            <div class="team-description-ctn">
+                <p>{{ team.description }}</p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <a href="{{ path('artists') }}"><button id="btn-team" class="btn"><b>See all the Artists</b></button></a>
+        </div>
+    </div>
+{% endblock %}

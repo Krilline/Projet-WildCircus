@@ -2,11 +2,74 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+            <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+            <link rel="icon" href="{{ asset('images/favicon/favicon-64.png') }}">
+        {% endblock %}
     </head>
     <body>
+    {% block header %}
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="navlogo">
+                    <a class="navbar-brand" href="/">
+                        <img src="{{ asset('images/wild-circus-logo.png') }}" alt="logo du site" id="logonav">
+                        WILD CIRCUS
+                    </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        {% if app.user %}
+                            <li class="nav-item active">
+                                <a class="nav-link" id="navlink" href="{{ path('cart') }}"><img class="icon-user" src="https://image.flaticon.com/icons/svg/3209/3209312.svg"></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" id="navlink" href="{{ path('profile') }}"><img class="icon-user" src="https://image.flaticon.com/icons/svg/848/848006.svg"></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link logout-button" id="logout-button" href="{{ path('app_logout') }}">LOGOUT</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item active">
+                                <a class="nav-link login-button" id="login-button" href="{{ path('app_login') }}">LOGIN</a>
+                            </li>
+                        {% endif %}
+                        <li class="nav-item active">
+                            <a class="nav-link" id="navlink" href="{{ path('home') }}#aboutus">ABOUT US</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" id="navlink" href="{{ path('artists') }}">ARTISTS</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" id="navlink" href="{{ path('tours') }}">TOURS</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" id="navlink" href="{{ path('contact') }}">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    {% endblock %}
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+    {% block footer %}
+        <footer>
+            <hr class="footer-hr">
+            <p class="copyright">
+                © All rights reserved
+            </p>
+        </footer>
+    {% endblock %}
+        {% block javascripts %}
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        {% endblock %}
     </body>
 </html>

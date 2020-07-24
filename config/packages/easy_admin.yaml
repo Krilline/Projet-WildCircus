@@ -1,18 +1,21 @@
 easy_admin:
-  site_name: "WILD CIRCUS"
+  site_name: '<span class="title" style="color: white">WILD CIRCUS</span>'
   formats:
     datetime: 'd/M/yy H:m'
   design:
+      assets:
+        css:
+          - 'css/custom_backend.css'
       menu:
-        - {entity: 'Article', icon: 'user-astronaut'}
-        - {entity: 'Team', icon: 'code-branch'}
-        - {entity: 'Artist', icon: 'address-book'}
-        - {entity: 'User', icon: 'thumbs-up'}
-        - {entity: 'Country', icon: 'cogs'}
-        - {entity: 'City', icon: 'cogs'}
-        - {entity: 'Contact', icon: 'cogs'}
-        - {entity: 'Order', icon: 'cogs'}
-        - {entity: 'Tour', icon: 'cogs'}
+        - {entity: 'Article', icon: 'newspaper'}
+        - {entity: 'Team', icon: 'users'}
+        - {entity: 'Artist', icon: 'bomb'}
+        - {entity: 'User', icon: 'user'}
+        - {entity: 'Country', icon: 'city'}
+        - {entity: 'City', icon: 'building'}
+        - {entity: 'Contact', icon: 'address-book'}
+        - {entity: 'Order', icon: 'credit-card'}
+        - {entity: 'Tour', icon: 'plane-departure'}
   entities:
     Article:
       class: App\Entity\Article
@@ -25,7 +28,7 @@ easy_admin:
           - { property: 'photo', type: 'image'}
           - 'title'
           - 'author'
-          - 'date'
+          - 'created_at'
       edit:
         fields:
           - 'photo'

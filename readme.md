@@ -1,15 +1,15 @@
-#WILD CIRCUS
+# WILD CIRCUS
 
 ##### A Showcase website to represent the tours, artists and articles of this circus.
 
-##How to use ?
-###(RECOMMENDED)
+## How to use ?
+### (RECOMMENDED)
 1- `composer install`
 
 2- import the database using PHPMyAdmin with the script in /resources
 
 2- create a .env.local and paste the .env inside it without forgetting to complete the database user, pwd and name of the database
-###(OR)
+### (OR)
 
 1- `composer install`
 
@@ -31,7 +31,7 @@
 
 ## Functionalities
 
-####Front
+#### Front
 * Nav-bar
     * Logo Wild Circus (Home)
     * Login
@@ -83,7 +83,7 @@
 * Footer 
     * Copyrights
     
-####Back
+#### Back
 Can be accessed with /admin and with ["ROLE_ADMIN"]
 * Easy-Admin
     * All entities can be managed

@@ -15,10 +15,10 @@
             <table class="table table-striped table-dark">
             <thead class="thead-dark">
             <tr>
-                <th scope="col">Order N°</th>
-                <th scope="col">Tour</th>
-                <th scope="col">Seat(s)</th>
-                <th scope="col">Total</th>
+                <th id="invisible-row">Order N°</th>
+                <th id="invisible-row">Tour</th>
+                <th id="invisible-row">Seat(s)</th>
+                <th id="invisible-row">Total</th>
             </tr>
             </thead>
             <tbody>
@@ -27,7 +27,7 @@
                 <th scope="row">{{ order.number }}</th>
                 <td>{{ order.tour.title }}</td>
                 <td>{{ order.seat }}</td>
-                <td>{{ order.total }}</td>
+                <td>{{ order.total }} $</td>
             </tr>
             {% endfor %}
             </tbody>

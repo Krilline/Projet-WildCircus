@@ -9,12 +9,12 @@
         <table class="table cart table-light">
             <thead class="thead-dark">
             <tr>
-                <th>Tour Name</th>
-                <th>Photo</th>
-                <th>Price</th>
-                <th>Number of seats</th>
-                <th>Total</th>
-                <th></th>
+                <th id="invisible-row">Tour Name</th>
+                <th id="invisible-row">Photo</th>
+                <th id="invisible-row">Price</th>
+                <th id="invisible-row">Number of seats</th>
+                <th id="invisible-row">Total</th>
+                <th id="invisible-row"></th>
             </tr>
             </thead>
             <tbody>
@@ -25,7 +25,7 @@
                     <td>{{ item.tour.price }} $</td>
                     <td>{{ item.seat }}</td>
                     <td>{{ item.tour.price * item.seat }} $</td>
-                    <td><a href="{{ path('cart_remove', { 'id': item.tour.id }) }}"><img src="https://image.flaticon.com/icons/svg/3141/3141684.svg" class="icon-user"></a></td>
+                    <td><a href="{{ path('cart_remove', { 'id': item.tour.id }) }}"><img src="https://image.flaticon.com/icons/svg/3141/3141684.svg" class="icon-trash"></a></td>
                 </tr>
             {% endfor %}
             </tbody>

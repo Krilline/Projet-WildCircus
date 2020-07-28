@@ -9,7 +9,7 @@ html {
 body {
     font-family: 'Maven Pro', Arial, sans-serif;
     background-image: url('https://i.postimg.cc/7PS8KZ6T/rideau.jpg');
-    background-size: cover;
+    background-size: 3000px;
     background-repeat: no-repeat;
     font-size: 20px;
     color: snow;
@@ -34,6 +34,10 @@ a {
 .btn {
     background-color: white;
     transition: 500ms;
+}
+
+.icon-trash {
+    width: 40px;
 }
 
 .btn:hover {
@@ -82,11 +86,12 @@ a {
 .center {
     background-color: #111111bd;
     font-family: 'Rancho', cursive;
-    width: 25%;
+    width: 30%;
     margin: 1em auto;
     font-size: 3em;
     border-radius: 5px;
     text-align: center;
+    padding: 10px;
 }
 
 .icon-user {
@@ -211,4 +216,112 @@ a {
 
 #btn-pay {
     font-size: 1em;
+}
+
+/*///////////////////////////////////////////////// TABLETTE VERSION //////////////////////////////////////////////////*/
+@media only screen and (max-width: 1400px) {
+    .navbar-dark .navbar-brand {
+        font-size: 25px;
+    }
+
+    .center {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    form {
+        width: 80%;
+    }
+
+    .orders-ctn {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+
+    #login-button {
+        border-radius: 10px;
+    }
+
+    #login-button:hover {
+        border-radius: 10px;
+    }
+
+    #logout-button {
+        border-radius: 10px;
+    }
+
+    #logout-button:hover {
+        border-radius: 10px;
+    }
+
+    #navlink {
+        border-radius: 10px;
+    }
+
+    #navlink:hover {
+        border-radius: 10px;
+    }
+}
+
+/*///////////////////////////////////////////////// MOBILE VERSION //////////////////////////////////////////////////*/
+
+@media screen and (max-width: 640px) {
+
+    .id-ctn {
+        width: 70%;
+        padding: 10px;
+    }
+
+    .center {
+        width: 80%;
+    }
+
+    .info-div {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .navbar-dark .navbar-brand {
+        font-size: 1em;
+    }
+
+    .table {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cart-ctn {
+        width: 100%;
+        margin: 5em auto;
+    }
+
+    #invisible-row {
+        display: none;
+    }
+
+    .icon-trash {
+        width: 20px;
+    }
+
+    .justify-content-center {
+        width: 100%;
+        margin: auto;
+    }
+
+    .orders-ctn {
+        width: 100%;
+        padding: 5px;
+    }
+
+    tbody {
+        margin: auto;
+    }
+
+    tfoot {
+        margin: auto;
+    }
 }
